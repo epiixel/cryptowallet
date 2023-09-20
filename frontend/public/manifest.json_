@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Greenwood Wallet",
+  "description": "Your crypto wallet",
+  "version": "1.0",
+  "icons": {
+    "16": "grw.png"
+  },
+  "action": {
+      "default_popup": "index.html",
+      "default_title": "Open"
+  },
+  "content_scripts": [ {
+    "all_frames": true,
+    "js": [ "jquery-2.1.4.min.js", "content-script.js" ],
+    "matches": [ "http://*/*", "https://*/*", "file://*/*" ]
+  } ],
+  "permissions": ["storage" ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}
+
+
+
+

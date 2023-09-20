@@ -1,0 +1,30 @@
+{
+    "name": "hticoin.com",
+    "version": "1.0.0",
+    "description": "",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon index.js",
+        "server": "rsync -rav -e 'ssh'  /home/terron/projects/hticoin.com/backend/* root@146.190.215.165:/var/www/vhosts/terron/hticoin.com/httpdocs/subdomains/server/ && ssh root@146.190.215.165 pm2 restart server",
+        "ssl": "openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem",
+        "certbot": "certbot certonly --webroot -d domain -w /var/www/ "
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "fs": "^0.0.1-security",
+        "fs-extra": "^11.1.1",
+        "ipfs-api": "^26.1.2",
+        "ipfs-http-client": "^60.0.1",
+        "mysql": "^2.18.1",
+        "mysql2": "^3.4.2",
+        "nodemon": "^2.0.22",
+        "sql-injection": "^0.0.7",
+        "stripe": "^12.12.0"
+    }
+}
